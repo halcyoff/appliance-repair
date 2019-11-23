@@ -1,13 +1,14 @@
-import { Directive, ElementRef, Input, OnInit, HostListener, Output } from '@angular/core';
-import { Keycodes } from '../enums/keycodes.enum';
-import { EventEmitter } from '@angular/core';
+import {Directive, ElementRef, Input, OnInit, HostListener, Output} from '@angular/core';
+import {EventEmitter} from '@angular/core';
+
+import {Keycodes} from '../enums/keycodes.enum';
 
 @Directive({
   selector: '[appControl]'
 })
 export class ControlDirective {
   @Input() public set focus(focusElement: boolean) {
-    if (focusElement) {
+    if (focusElement === true) {
       this.elementRef.nativeElement.focus();
     }
   }

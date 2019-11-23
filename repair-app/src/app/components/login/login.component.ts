@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,24 +7,32 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public formGroup = new FormGroup({});
-  public focusUsername = false;
+  public usernameFormGroup = new FormGroup({});
+  public passwordFormGroup = new FormGroup({});
+  public focusField = false;
 
   constructor() {}
 
   public ngOnInit(): void {
     this.initFormControls();
-    this.setFocusUsername();
+    this.setFocusToField();
+  }
+
+  public setFocusToField(): void {
+    setTimeout(() => {
+      this.focusField = false;
+      setTimeout(() => {
+        this.focusField = true;
+      }, 250);
+    }, 300);
+  }
+
+  public submitOnEnter(): void {
+    
   }
 
   private initFormControls(): void {
-    this.formGroup.addControl('username', new FormControl());
-    this.formGroup.addControl('password', new FormControl());
-  }
-
-  private setFocusUsername(): void {
-    setTimeout(() => {
-      this.focusUsername = true;
-    }, 500);
+    this.usernameFormGroup.addControl('username', new FormControl('', Validators.required));
+    this.passwordFormGroup.addControl('password', new FormControl('', Validators.required));
   }
 }

@@ -1,10 +1,13 @@
 .login {
     position: absolute;
-    top: 50%;
-    left: 50%;
-
+    top: 40%;
+    left: 35%;
 
     mat-form-field {
         width: 20em;
+    }
+
+    mat-horizontal-stepper {
+        width: 50em;
     }
 }
