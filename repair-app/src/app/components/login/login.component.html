@@ -1,12 +1,15 @@
 <div class="login" [formGroup]="formGroup">
   <div>
     <mat-form-field>
-      <input class="username" matInput placeholder="username">
+      <input formControlName="username" class="username" matInput placeholder="username">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input class="password" matInput placeholder="password">
+      <input formControlName="password"  class="password" matInput placeholder="password">
     </mat-form-field>
+  </div>
+  <div>
+    <button mat-button>login</button>
   </div>
 </div>
