@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   public submitOnEnter(): void {
-    
+
   }
 
   private initFormControls(): void {
