@@ -1,12 +1,30 @@
-<div class="login" [formGroup]="formGroup">
+<div 
+  appControl
+  class="login" 
+  [formGroup]="formGroup"
+  [handleEnterPress]="true" 
+>
   <div>
     <mat-form-field>
-      <input formControlName="username" class="username" matInput placeholder="username">
+      <input 
+        appControl 
+        class="username" 
+        [focus]="focusUsername" 
+        formControlName="username" 
+        matInput 
+        placeholder="username"
+      >
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input formControlName="password"  class="password" matInput placeholder="password">
+      <input 
+        class="password" 
+        formControlName="password" 
+        matInput 
+        placeholder="password"  
+        type="password"
+      >
     </mat-form-field>
   </div>
   <div>
