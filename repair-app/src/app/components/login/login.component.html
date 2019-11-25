@@ -4,7 +4,7 @@
       <form [formGroup]="usernameFormGroup">
         <ng-template matStepLabel>enter username</ng-template>
         <mat-form-field>
-          <input appControl class="username" [focus]="focusField" formControlName="username" matInput placeholder="username">
+          <input appControl class="username" [focus]="focusField" [formControlName]="usernameFormControlName" matInput placeholder="username">
         </mat-form-field>
       </form>
       <div>
@@ -15,7 +15,7 @@
       <ng-template matStepLabel>enter password</ng-template>
       <form [formGroup]="passwordFormGroup">
         <mat-form-field>
-          <input appControl class="password" [focus]="focusField" formControlName="password" matInput placeholder="password"  type="password">
+          <input appControl class="password" [focus]="focusField" [formControlName]="passwordFormControlName" matInput placeholder="password"  type="password">
         </mat-form-field>
       </form>
       <div>

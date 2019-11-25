@@ -10,6 +10,8 @@ import { MatStepperNext, MatHorizontalStepper } from '@angular/material/stepper'
 export class LoginComponent implements OnInit {
   public usernameFormGroup = new FormGroup({});
   public passwordFormGroup = new FormGroup({});
+  public passwordFormControlName = 'password';
+  public usernameFormControlName = 'username';
   public focusField = false;
 
   constructor() {}
@@ -38,11 +40,11 @@ export class LoginComponent implements OnInit {
   }
 
   private initFormControls(): void {
-    this.usernameFormGroup.addControl('username', new FormControl('', Validators.required));
-    this.passwordFormGroup.addControl('password', new FormControl('', Validators.required));
+    this.usernameFormGroup.addControl(this.usernameFormControlName, new FormControl('', Validators.required));
+    this.passwordFormGroup.addControl(this.passwordFormControlName, new FormControl('', Validators.required));
   }
 
   private validateLogin(): boolean {
-    return this.passwordFormGroup.get('password').valid;
+    return this.passwordFormGroup.get(this.passwordFormControlName).valid;
   }
 }
