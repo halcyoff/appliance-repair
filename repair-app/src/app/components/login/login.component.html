@@ -1,5 +1,5 @@
-<div appControl class="login" (enterKeyPressed)="submitOnEnter()" [handleEnterPress]="true">
-  <mat-horizontal-stepper (selectionChange)="setFocusToField()" [linear]="true">
+<div appControl class="login" (enterKeyPressed)="submitOnEnter(stepper)" [handleEnterPress]="true">
+  <mat-horizontal-stepper #stepper (selectionChange)="setFocusToField()" [linear]="true">
     <mat-step [stepControl]="usernameFormGroup">
       <form [formGroup]="usernameFormGroup">
         <ng-template matStepLabel>enter username</ng-template>
