@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { MatStepperNext, MatHorizontalStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-login',
@@ -27,12 +28,21 @@ export class LoginComponent implements OnInit {
     }, 300);
   }
 
-  public submitOnEnter(): void {
-    
+  public submitOnEnter(stepper: MatHorizontalStepper): void {
+    const isFirstStep = 0 === stepper.selectedIndex;
+    if (!isFirstStep && this.validateLogin()) {
+      console.log('log in');
+    } else {
+      stepper.next();
+    }
   }
 
   private initFormControls(): void {
     this.usernameFormGroup.addControl('username', new FormControl('', Validators.required));
     this.passwordFormGroup.addControl('password', new FormControl('', Validators.required));
+  }
+
+  private validateLogin(): boolean {
+    return this.passwordFormGroup.get('password').valid;
   }
 }
