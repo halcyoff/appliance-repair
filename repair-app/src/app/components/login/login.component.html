@@ -1,27 +1,32 @@
 <div appControl class="login" (enterKeyPressed)="submitOnEnter(stepper)" [handleEnterPress]="true">
-  <mat-horizontal-stepper #stepper (selectionChange)="setFocusToField()" [linear]="true">
-    <mat-step [stepControl]="usernameFormGroup">
-      <form [formGroup]="usernameFormGroup">
-        <ng-template matStepLabel>enter username</ng-template>
-        <mat-form-field>
-          <input appControl class="username" [focus]="focusField" [formControlName]="usernameFormControlName" matInput placeholder="username">
-        </mat-form-field>
-      </form>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </mat-step>
-    <mat-step [stepControl]="passwordFormGroup">
-      <ng-template matStepLabel>enter password</ng-template>
-      <form [formGroup]="passwordFormGroup">
-        <mat-form-field>
-          <input appControl class="password" [focus]="focusField" [formControlName]="passwordFormControlName" matInput placeholder="password"  type="password">
-        </mat-form-field>
-      </form>
-      <div>
-        <button mat-button matStepperNext>login</button>
-        <button mat-button matStepperPrevious>back</button>
-      </div>
-    </mat-step>
-  </mat-horizontal-stepper> 
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-horizontal-stepper #stepper (selectionChange)="setFocusToField()" [linear]="true">
+      <mat-step [stepControl]="usernameFormGroup">
+        <form [formGroup]="usernameFormGroup">
+          <ng-template matStepLabel>enter username</ng-template>
+          <mat-form-field>
+            <input appControl class="username" [focus]="focusField" [formControlName]="usernameFormControlName" matInput placeholder="username">
+          </mat-form-field>
+        </form>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="passwordFormGroup">
+        <ng-template matStepLabel>enter password</ng-template>
+        <form [formGroup]="passwordFormGroup">
+          <mat-form-field>
+            <input appControl class="password" [focus]="focusField" [formControlName]="passwordFormControlName" matInput placeholder="password"  type="password">
+          </mat-form-field>
+        </form>
+        <div>
+          <button mat-button matStepperNext>login</button>
+          <button mat-button matStepperPrevious>back</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper> 
+  </mat-card>
 </div>

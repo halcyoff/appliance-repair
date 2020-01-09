@@ -1,5 +1,6 @@
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -35,6 +36,7 @@ const services = [];
 
 const materialModules = [
   MatButtonModule,
+  MatCardModule,
   MatInputModule,
   MatStepperModule,
   MatToolbarModule
